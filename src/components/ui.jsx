@@ -31,16 +31,16 @@ export const Badge = ({ children, variant = 'default' }) => {
 
 export function StatItem({ label, value, sub, icon }) {
   return (
-    <Card className="p-6 flex items-center gap-6 border-white/5 bg-slate-900/40">
-      <div className="w-14 h-14 rounded-2xl bg-slate-800 flex items-center justify-center shadow-inner">
+    <Card className="p-4 sm:p-6 flex items-center gap-3 sm:gap-6 border-white/5 bg-slate-900/40">
+      <div className="w-11 h-11 sm:w-14 sm:h-14 rounded-2xl bg-slate-800 flex items-center justify-center shadow-inner shrink-0">
         {icon}
       </div>
-      <div>
-        <p className="text-[10px] font-black uppercase tracking-[0.3em] text-slate-600 mb-1.5">
+      <div className="min-w-0">
+        <p className="text-[9px] sm:text-[10px] font-black uppercase tracking-[0.2em] sm:tracking-[0.3em] text-slate-600 mb-1.5 truncate">
           {label}
         </p>
-        <div className="flex items-baseline gap-2">
-          <span className="text-3xl font-black text-white leading-none tracking-tighter">
+        <div className="flex items-baseline gap-2 flex-wrap">
+          <span className="text-2xl sm:text-3xl font-black text-white leading-none tracking-tighter">
             {value}
           </span>
           <span className="text-[10px] font-bold text-slate-500 uppercase tracking-widest">

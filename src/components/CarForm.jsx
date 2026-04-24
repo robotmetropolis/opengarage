@@ -21,21 +21,21 @@ export default function CarForm({ car, onCancel, onSave }) {
   const [formData, setFormData] = useState(car || EMPTY_CAR);
 
   return (
-    <div className="max-w-3xl mx-auto space-y-10 animate-in slide-in-from-bottom-8 duration-700">
-      <div className="flex justify-between items-center">
-        <h2 className="text-4xl font-black text-white tracking-tighter uppercase">
+    <div className="max-w-3xl mx-auto space-y-6 sm:space-y-10 animate-in slide-in-from-bottom-8 duration-700">
+      <div className="flex justify-between items-center gap-3 flex-wrap">
+        <h2 className="text-2xl sm:text-4xl font-black text-white tracking-tighter uppercase">
           {car ? 'MODIFICAR FICHA' : 'REGISTRAR INGRESO'}
         </h2>
         <button
           onClick={onCancel}
-          className="text-slate-600 hover:text-white font-black text-[10px] uppercase tracking-[0.3em] transition-colors"
+          className="text-slate-600 hover:text-white font-black text-[10px] uppercase tracking-[0.2em] sm:tracking-[0.3em] transition-colors"
         >
-          Cancelar Operación
+          Cancelar
         </button>
       </div>
 
-      <Card className="p-10 space-y-10 border-white/10">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <Card className="p-5 sm:p-10 space-y-8 sm:space-y-10 border-white/10">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-5 sm:gap-8">
           <InputField
             label="Marca"
             value={formData.make}
@@ -109,7 +109,7 @@ export default function CarForm({ car, onCancel, onSave }) {
           </div>
         </div>
 
-        <div className="pt-10 border-t border-white/5 flex flex-col gap-6">
+        <div className="pt-6 sm:pt-10 border-t border-white/5 flex flex-col gap-6">
           <CheckboxField
             label="Requiere atención mecánica urgente"
             checked={formData.needsService}
@@ -122,10 +122,10 @@ export default function CarForm({ car, onCancel, onSave }) {
           />
         </div>
 
-        <div className="pt-10">
+        <div className="pt-6 sm:pt-10">
           <button
             onClick={() => onSave(formData)}
-            className="w-full bg-blue-600 hover:bg-blue-500 text-white py-5 rounded-[2rem] font-black text-xl uppercase tracking-widest shadow-2xl shadow-blue-900/40 transition-all hover:scale-[1.02] active:scale-95"
+            className="w-full bg-blue-600 hover:bg-blue-500 text-white py-4 sm:py-5 rounded-3xl sm:rounded-[2rem] font-black text-base sm:text-xl uppercase tracking-widest shadow-2xl shadow-blue-900/40 transition-all hover:scale-[1.02] active:scale-95"
           >
             CONFIRMAR EN GARAGE
           </button>

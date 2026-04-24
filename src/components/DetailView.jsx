@@ -22,23 +22,26 @@ export default function DetailView({ car, onBack, onEdit, onUpdate, onDelete }) 
   };
 
   return (
-    <div className="space-y-10 animate-in fade-in duration-700">
-      <div className="flex items-center justify-between">
+    <div className="space-y-6 sm:space-y-10 animate-in fade-in duration-700">
+      <div className="flex items-center justify-between gap-3 flex-wrap">
         <button
           onClick={onBack}
-          className="flex items-center gap-3 text-slate-500 hover:text-white transition-colors font-black text-[10px] uppercase tracking-[0.3em]"
+          className="flex items-center gap-2 sm:gap-3 text-slate-500 hover:text-white transition-colors font-black text-[10px] uppercase tracking-[0.2em] sm:tracking-[0.3em]"
         >
-          <ChevronLeft className="w-5 h-5" /> Regresar al Garage
+          <ChevronLeft className="w-5 h-5" />
+          <span className="hidden sm:inline">Regresar al Garage</span>
+          <span className="sm:hidden">Volver</span>
         </button>
-        <div className="flex gap-4">
+        <div className="flex gap-2 sm:gap-4">
           <button
             onClick={onEdit}
-            className="bg-slate-800 hover:bg-slate-700 px-6 py-3 rounded-2xl text-[10px] font-black uppercase tracking-widest transition-all"
+            className="bg-slate-800 hover:bg-slate-700 px-4 sm:px-6 py-3 rounded-2xl text-[10px] font-black uppercase tracking-widest transition-all"
           >
-            Editar Auto
+            Editar
           </button>
           <button
             onClick={() => onDelete(car.id)}
+            aria-label="Eliminar vehículo"
             className="bg-rose-500/10 hover:bg-rose-500/20 text-rose-500 p-3 rounded-2xl transition-all"
           >
             <Trash2 className="w-5 h-5" />
@@ -46,8 +49,8 @@ export default function DetailView({ car, onBack, onEdit, onUpdate, onDelete }) 
         </div>
       </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-10">
-        <div className="lg:col-span-4 space-y-8">
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-10">
+        <div className="lg:col-span-4 space-y-6 sm:space-y-8">
           <Card>
             <div className="h-72 bg-slate-800 relative">
               {car.photoUrl ? (
@@ -62,13 +65,15 @@ export default function DetailView({ car, onBack, onEdit, onUpdate, onDelete }) 
                 style={{ backgroundColor: car.colorHex }}
               ></div>
             </div>
-            <div className="p-8">
-              <h2 className="text-4xl font-black text-white leading-none tracking-tighter uppercase">
+            <div className="p-6 sm:p-8">
+              <h2 className="text-3xl sm:text-4xl font-black text-white leading-none tracking-tighter uppercase break-words">
                 {car.make}
               </h2>
-              <p className="text-2xl text-slate-500 font-bold mt-2 uppercase">{car.model}</p>
+              <p className="text-xl sm:text-2xl text-slate-500 font-bold mt-2 uppercase break-words">
+                {car.model}
+              </p>
 
-              <div className="grid grid-cols-2 gap-6 mt-10 py-8 border-y border-white/5">
+              <div className="grid grid-cols-2 gap-4 sm:gap-6 mt-6 sm:mt-10 py-6 sm:py-8 border-y border-white/5">
                 <InfoItem label="Fabricación" value={car.year} />
                 <InfoItem label="Matrícula" value={car.plate || '-'} />
                 <InfoItem
@@ -103,8 +108,8 @@ export default function DetailView({ car, onBack, onEdit, onUpdate, onDelete }) 
             </div>
           </Card>
 
-          <Card className="p-8">
-            <h4 className="text-[10px] font-black uppercase tracking-[0.4em] text-slate-600 mb-8 flex items-center gap-3">
+          <Card className="p-6 sm:p-8">
+            <h4 className="text-[10px] font-black uppercase tracking-[0.3em] sm:tracking-[0.4em] text-slate-600 mb-6 sm:mb-8 flex items-center gap-3">
               <ShieldCheck className="w-5 h-5" /> AUDITORÍA LEGAL
             </h4>
             <div className="space-y-4">
@@ -132,8 +137,8 @@ export default function DetailView({ car, onBack, onEdit, onUpdate, onDelete }) 
           </Card>
         </div>
 
-        <div className="lg:col-span-8 space-y-8">
-          <div className="flex gap-10 border-b border-white/5 overflow-x-auto">
+        <div className="lg:col-span-8 space-y-6 sm:space-y-8">
+          <div className="flex gap-4 sm:gap-10 border-b border-white/5 overflow-x-auto no-scrollbar">
             <Tab
               label="SIMULADOR 3D"
               active={tab === '3d'}
@@ -154,12 +159,12 @@ export default function DetailView({ car, onBack, onEdit, onUpdate, onDelete }) 
             />
           </div>
 
-          <div className="min-h-[600px]">
+          <div className="min-h-[400px] sm:min-h-[600px]">
             {tab === '3d' && (
-              <div className="h-[600px] bg-slate-900 rounded-[3rem] border border-white/5 relative shadow-inner overflow-hidden group">
+              <div className="h-[400px] sm:h-[600px] bg-slate-900 rounded-3xl sm:rounded-[3rem] border border-white/5 relative shadow-inner overflow-hidden group">
                 <Car3DViewer color={car.colorHex} />
-                <div className="absolute inset-0 pointer-events-none p-10 flex flex-col justify-end">
-                  <div className="bg-slate-950/80 backdrop-blur-2xl p-8 rounded-[2rem] border border-white/10 w-fit max-w-sm">
+                <div className="absolute inset-0 pointer-events-none p-5 sm:p-10 flex flex-col justify-end">
+                  <div className="bg-slate-950/80 backdrop-blur-2xl p-5 sm:p-8 rounded-2xl sm:rounded-[2rem] border border-white/10 w-fit max-w-sm">
                     <p className="text-[10px] font-black text-blue-500 uppercase tracking-[0.3em] mb-2">
                       Digital Twin
                     </p>
@@ -176,9 +181,9 @@ export default function DetailView({ car, onBack, onEdit, onUpdate, onDelete }) 
             )}
 
             {tab === 'history' && (
-              <div className="space-y-8">
-                <div className="flex justify-between items-center">
-                  <h3 className="text-2xl font-black text-white uppercase tracking-tight">
+              <div className="space-y-6 sm:space-y-8">
+                <div className="flex justify-between items-center gap-3 flex-wrap">
+                  <h3 className="text-xl sm:text-2xl font-black text-white uppercase tracking-tight">
                     Cronología de Servicios
                   </h3>
                   <button
@@ -204,11 +209,11 @@ export default function DetailView({ car, onBack, onEdit, onUpdate, onDelete }) 
                 </div>
 
                 {history.length > 0 ? (
-                  <div className="relative pl-10 space-y-8 before:absolute before:left-4 before:top-2 before:bottom-2 before:w-1 before:bg-slate-800 before:rounded-full">
+                  <div className="relative pl-8 sm:pl-10 space-y-6 sm:space-y-8 before:absolute before:left-3 sm:before:left-4 before:top-2 before:bottom-2 before:w-1 before:bg-slate-800 before:rounded-full">
                     {history.map((h, i) => (
                       <div key={i} className="relative group">
-                        <div className="absolute -left-[31px] top-1 w-6 h-6 rounded-full bg-slate-950 border-4 border-blue-600 group-hover:scale-125 transition-transform"></div>
-                        <Card className="p-8 bg-slate-900/40 hover:bg-slate-900 transition-all border-white/5">
+                        <div className="absolute -left-[25px] sm:-left-[31px] top-1 w-6 h-6 rounded-full bg-slate-950 border-4 border-blue-600 group-hover:scale-125 transition-transform"></div>
+                        <Card className="p-5 sm:p-8 bg-slate-900/40 hover:bg-slate-900 transition-all border-white/5">
                           <div className="flex justify-between items-start mb-6">
                             <span className="text-blue-500 font-black text-xs tracking-widest">
                               {h.date}
@@ -230,8 +235,8 @@ export default function DetailView({ car, onBack, onEdit, onUpdate, onDelete }) 
                     ))}
                   </div>
                 ) : (
-                  <div className="py-32 text-center bg-slate-900/30 rounded-[3rem] border border-dashed border-white/5">
-                    <Activity className="w-20 h-20 text-slate-800 mx-auto mb-8" />
+                  <div className="py-16 sm:py-32 text-center bg-slate-900/30 rounded-3xl sm:rounded-[3rem] border border-dashed border-white/5 px-6">
+                    <Activity className="w-14 h-14 sm:w-20 sm:h-20 text-slate-800 mx-auto mb-6 sm:mb-8" />
                     <p className="text-slate-500 font-black uppercase tracking-[0.2em] text-xs">
                       Sin registros históricos
                     </p>

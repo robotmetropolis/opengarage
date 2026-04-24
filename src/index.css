@@ -31,3 +31,11 @@ input[type='color']::-webkit-color-swatch {
   border: none;
   border-radius: 0.75rem;
 }
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
