@@ -1,0 +1,21 @@
+node_modules
+dist
+dist-ssr
+.DS_Store
+.vscode/*
+!.vscode/extensions.json
+.idea
+.env
+.env.*
+!.env.example
+
+# Capacitor generated
+android/
+ios/
+.capacitor/
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
