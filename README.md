@@ -1,4 +1,4 @@
-# OpenCars
+# OpenGarage
 
 Gestor de colección de autos clásicos construido como app híbrida **Capacitor + React + Vite + Tailwind**. La persistencia se resuelve con un único archivo JSON: en el navegador usa `localStorage`, en Android se guarda en el directorio de datos de la app mediante `@capacitor/filesystem`.
 
@@ -77,7 +77,7 @@ También podés correr el workflow manualmente desde la pestaña **Actions → D
 
 Notas:
 
-- [`vite.config.js`](vite.config.js) usa `base: './'` (rutas relativas), por lo que funciona tanto en subpath (`/opencars/`) como en dominio raíz sin tocar nada.
+- [`vite.config.js`](vite.config.js) usa `base: './'` (rutas relativas), por lo que funciona tanto en subpath (`/opengarage/`) como en dominio raíz sin tocar nada.
 - Los datos viven en el `localStorage` del navegador de cada visitante: no hay sincronización entre dispositivos.
 - Las imágenes de Unsplash se cargan online. Para modo offline total, reemplazalas por archivos en `public/`.
 

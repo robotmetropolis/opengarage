@@ -143,7 +143,7 @@ export default function App() {
             </div>
             <div>
               <h1 className="text-2xl font-black tracking-tighter text-white leading-none">
-                OPENCARS
+                OPENGARAGE
               </h1>
               <p className="text-[10px] text-slate-500 uppercase tracking-[0.4em] mt-1 font-black">
                 Collector Management

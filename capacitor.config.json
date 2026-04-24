@@ -1,6 +1,6 @@
 {
   "appId": "com.opencars.app",
-  "appName": "OpenCars",
+  "appName": "OpenGarage",
   "webDir": "dist",
   "server": {
     "androidScheme": "https"

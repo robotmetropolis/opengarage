@@ -1,9 +1,9 @@
 {
-  "name": "opencars",
+  "name": "opengarage",
   "private": true,
   "version": "0.1.0",
   "type": "module",
-  "description": "OpenCars - Gestor de colección de autos (Capacitor + React + Vite).",
+  "description": "OpenGarage - Gestor de colección de autos (Capacitor + React + Vite).",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
