@@ -67,11 +67,11 @@ Setup único (una vez por repo):
    git add .
    git commit -m "Initial commit"
    git branch -M main
-   git remote add origin https://github.com/<usuario>/opencars.git
+   git remote add origin https://github.com/robotmetropolis/opengarage.git
    git push -u origin main
    ```
 2. En GitHub → **Settings → Pages** → *Build and deployment* → *Source*: **GitHub Actions**.
-3. Listo. Cada `git push` a `main` dispara [`.github/workflows/deploy.yml`](.github/workflows/deploy.yml) y publica `dist/` en `https://<usuario>.github.io/opencars/`.
+3. Listo. Cada `git push` a `main` dispara [`.github/workflows/deploy.yml`](.github/workflows/deploy.yml) y publica `dist/` en `https://robotmetropolis.github.io/opengarage/`.
 
 También podés correr el workflow manualmente desde la pestaña **Actions → Deploy to GitHub Pages → Run workflow**.
 
